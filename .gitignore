@@ -172,3 +172,7 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+.qodo
+
+# Data for the testing
+/data
