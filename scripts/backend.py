@@ -31,7 +31,7 @@ async def clean_data(file: UploadFile = File(...)):
         
         # Load file into Pandas DataFrame
         if file_extension == "csv":
-            df = pd.read_csv(io.StringIO(contents.decode('utf-8')))
+            df = pd.read_csv(io.StringIO(contents.decode('utf-8')), on_bad_lines="skip")
         elif file_extension in ["xlsx", "xls"]:
             df = pd.read_excel(io.BytesIO(contents))
         else:
